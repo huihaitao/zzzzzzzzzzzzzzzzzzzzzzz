@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#pjz{
+		width: 1200px;
+		height: 403px;
+		margin: 0 0 0 74px;
+		clear: both;
+		/*background: orange;*/
+	}
+	.pjz_a{
+		padding-top: 35px;
+	}
+	
+	
+	#app{
+		width: 1135px;
+		height: 300px;
+		overflow: hidden;
+	}
+	.app_b{
+		width: 210px;
+		height: 300px;
+		background: #fff;
+		margin-right: 17px;
+		float: left;
+		transition: all 1s;
+	}
+	.app_b:hover{
+		transform: translateY(-10px);
+	}
+	.app_b a img{
+		width: 98px;
+		height: 98px;
+		margin: 62px 0 32px 52px;
+	}
+	.app_bb{
+		display: block;
+		font-size: 18px;
+		color: #333;
+		margin-top:-31px ;
+	}
+	.app_bc{
+		display: block;
+		font-size: 14px;
+		color: #999;
+		margin-top:-18px ;
+	}
+	#appa{
+		font-size: 40px;
+		color: #000;
+		position: absolute;
+		top: 100px;
+		cursor: pointer;
+	}
+	#appb{
+		font-size: 40px;
+		color: #000;
+		position: absolute;
+		top: 100px;
+		right: 0;
+		cursor: pointer;
+	}
+	
+	</style>
+</head>
+<body>
+	<div id="pjz">
+		<div class="pj_a pjz_a">
+			<p>MeituFamily专区</p>
+			<a href="#">更多 ></a>
+		</div>
+		<div id="app" style="position: relative;">
+			<span id="appa"><</span>
+			<ul class="app_a" style="margin-left: 40px;">
+				<li class="app_b">
+					<a href="#">
+						<img src="img/MTAPP/1A.png" alt="" />
+						<span class="app_bb">美图秀秀</span>
+						<span class="app_bc">中国最流行的图片处理软件</span>
+					</a>
+				</li>
+				<li class="app_b">
+					<a href="#">
+						<img src="img/MTAPP/2A.png" alt="" />
+						<span class="app_bb">美图秀秀</span>
+						<span class="app_bc">中国最流行的图片处理软件</span>
+					</a>
+				</li>
+				<li class="app_b">
+					<a href="#">
+						<img src="img/MTAPP/3A.png" alt="" />
+						<span class="app_bb">美图秀秀</span>
+						<span class="app_bc">中国最流行的图片处理软件</span>
+					</a>
+				</li>
+				<li class="app_b">
+					<a href="#">
+						<img src="img/MTAPP/4A.png" alt="" />
+						<span class="app_bb">美图秀秀</span>
+						<span class="app_bc">中国最流行的图片处理软件</span>
+					</a>
+				</li>
+				<li class="app_b">
+					<a href="#">
+						<img src="img/MTAPP/5A.png" alt="" />
+						<span class="app_bb">美图秀秀</span>
+						<span class="app_bc">中国最流行的图片处理软件</span>
+					</a>
+				</li>
+				<li class="app_b">
+					<a href="#">
+						<img src="img/MTAPP/6A.png" alt="" />
+						<span class="app_bb">美图秀秀</span>
+						<span class="app_bc">中国最流行的图片处理软件</span>
+					</a>
+				</li>
+				<li class="app_b">
+					<a href="#">
+						<img src="img/MTAPP/7A.png" alt="" />
+						<span class="app_bb">美图秀秀</span>
+						<span class="app_bc">中国最流行的图片处理软件</span>
+					</a>
+				</li>
+				<li class="app_b">
+					<a href="#">
+						<img src="img/MTAPP/8A.png" alt="" />
+						<span class="app_bb">美图秀秀</span>
+						<span class="app_bc">中国最流行的图片处理软件</span>
+					</a>
+				</li>
+			</ul>
+			<span id="appb">></span>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		var oDiv=document.getElementById('app');
+		var oUl=oDiv.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName("li");
+
+		var speed=2;
+
+		oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+		oUl.style.width=aLi[0].offsetWidth*aLi.length+"px";
+
+		function move(){ 
+			if(oUl.offsetLeft<-oUl.offsetWidth/2){
+				oUl.style.left="0";
+			}
+			if(oUl.offsetLeft>0){
+				oUl.style.left=-oUl.offsetWidth/2+"px"
+			}
+
+			oUl.style.left=oUl.offsetLeft+speed+"px";
+		}
+
+		var timer=setInterval(move,30);
+
+		oDiv.onmouseover=function(){	
+			clearInterval(timer);
+		}
+		oDiv.onmouseout=function(){
+			timer=setInterval(move,30);
+		}
+			
+		document.getElementById("appa").onclick=function(){
+			speed=-2;
+		}
+		document.getElementById("appb").onclick=function(){
+			speed=2;
+		}
+	}
+	
+</script>
